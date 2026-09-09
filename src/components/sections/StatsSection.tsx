@@ -1,0 +1,4 @@
+import { ChartBar as BarChart3, HeartHandshake, Timer, UsersRound } from "lucide-react";
+import { Card } from "@/components/ui/card";
+const stats = [[Timer,"60 мин","среднее время выезда"],[UsersRound,"8 500+","довольных клиентов"],[BarChart3,"96%","ремонтов за один визит"],[HeartHandshake,"12 мес.","гарантия на работы"]] as const;
+export function StatsSection() { return <section className="bg-white py-12"><div className="section-shell grid grid-cols-2 gap-4 lg:grid-cols-4">{stats.map(([Icon,value,label]) => <Card key={label} className="flex items-center gap-3 border-none bg-background p-4 shadow-none"><Icon className="shrink-0 text-primary" size={25} /><div><strong className="block text-xl sm:text-2xl">{value}</strong><span className="text-xs text-muted-foreground">{label}</span></div></Card>)}</div></section>; }
